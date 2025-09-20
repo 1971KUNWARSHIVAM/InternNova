@@ -1,0 +1,367 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>InterNova - Find Your Internship</title>
+    <!-- Tailwind CSS CDN link -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        // Tailwind ki custom colours aur fonts yahi par define kiye hain
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        'dark-bg': '#0a0a0a',
+                        'card-bg': 'rgba(255, 255, 255, 0.05)',
+                        'brand-purple': '#8B5CF6',
+                        'brand-pink': '#EC4899',
+                        'brand-green': '#22C55E',
+                        'brand-blue': '#3B82F6',
+                        'match-red': '#EF4444',
+                        'match-yellow': '#F59E0B',
+                        'match-green': '#22C55E',
+                    },
+                    fontFamily: {
+                        sans: ['Inter', 'sans-serif'],
+                        mono: ['JetBrains Mono', 'monospace'],
+                    },
+                },
+            },
+        };
+    </script>
+    <!-- Custom CSS file ko link kiya -->
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body class="bg-dark-bg text-gray-300 font-sans tracking-tight">
+
+    <!-- Header section -->
+    <header class="bg-card-bg shadow-sm py-4 backdrop-blur-md relative z-20">
+        <div class="container mx-auto px-4 sm:px-6 lg:px-8 flex items-center justify-between">
+            <div class="flex items-center space-x-4">
+                <img src="banner.png" alt="Company Logo" style="height: 50px; width: auto;">
+            </div>
+            <div class="flex items-center space-x-2">
+                <a href="#"
+                    class="hidden sm:inline-block text-white px-4 py-2 rounded-full font-semibold text-sm transition-colors duration-200 border-2 border-brand-pink glow-button">
+                    User Login/Register
+                </a>
+                <a href="#"
+                    class="hidden sm:inline-block text-white px-4 py-2 rounded-full font-semibold text-sm transition-colors duration-200 border-2 border-brand-blue glow-button">
+                    Org Login/Register
+                </a>
+                <div class="flex items-center bg-gray-800 rounded-full overflow-hidden border border-gray-700 ml-4">
+                    <input type="text" placeholder="Enhanced by Google"
+                        class="py-2 px-4 focus:outline-none text-sm w-48 sm:w-64 bg-transparent text-white placeholder-gray-500">
+                    <button class="bg-brand-purple text-white px-4 py-2 h-full hover:bg-opacity-80 transition-colors">
+                        <svg class="h-5 w-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"
+                            xmlns="http://www.w3.org/2000/svg">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z"></path>
+                        </svg>
+                    </button>
+                </div>
+                <button id="hamburger-button" class="hamburger-menu-icon ml-4 relative z-50">
+                    <div class="line line-1 transition-transform duration-300"></div>
+                    <div class="line line-2 transition-opacity duration-300"></div>
+                    <div class="line line-3 transition-transform duration-300"></div>
+                    <div
+                        class="cross absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 opacity-0 transition-opacity duration-300">
+                        <div class="line line-4 rotate-45 transform"></div>
+                        <div class="line line-5 -rotate-45 transform"></div>
+                    </div>
+                </button>
+            </div>
+        </div>
+    </header>
+
+    <!-- Slide-in menu -->
+    <div id="slide-in-menu" class="slide-in-menu flex flex-col items-start p-8 space-y-6 text-xl">
+        <a href="#" class="text-white hover:text-brand-purple transition-colors duration-200">About Us</a>
+        <a href="#" class="text-white hover:text-brand-purple transition-colors duration-200">About Developer</a>
+        <a href="#" class="text-white hover:text-brand-purple transition-colors duration-200">Testimonials</a>
+        <a href="#" class="text-white hover:text-brand-purple transition-colors duration-200">Contact</a>
+        <a href="#" class="text-white hover:text-brand-purple transition-colors duration-200">Privacy Policy</a>
+    </div>
+
+    <!-- Main content area -->
+    <main class="container mx-auto px-4 py-8">
+        <div class="text-center mb-8">
+            <h1 class="text-4xl sm:text-5xl md:text-6xl font-extrabold text-white drop-shadow-lg leading-tight">
+                <span class="bg-clip-text text-transparent bg-gradient-to-r from-brand-pink to-brand-purple">Unleash
+                    Your Potential</span> ✨
+            </h1>
+            <p class="text-gray-400 mt-2 text-lg"> Welcome to the official portal for the Prime Minister's Internship
+                Scheme. This visionary initiative, a flagship program of the Government of India under the Ministry of
+                Corporate Affairs, is designed to empower the nation's youth by bridging the crucial gap between
+                academic knowledge and real-world professional experience. The scheme aims to provide one crore young
+                individuals with valuable, paid internship opportunities in India's top companies over the next five
+                years. Through this portal, we strive to create a dynamic and accessible platform for aspiring young
+                minds to gain practical skills, enhance their employability, and become job-ready for the future. The
+                Prime Minister's Internship Scheme is a transformative step towards building a skilled and confident
+                workforce, contributing to the vision of a self-reliant and prosperous India. We encourage all eligible
+                candidates to explore the diverse opportunities available and embark on a journey of professional growth
+                and career excellence.</p>
+        </div>
+
+        <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-6">
+
+            <div
+                class="flex flex-col items-center justify-between p-6 bg-card-bg rounded-xl shadow-2xl backdrop-blur-sm card-border-glow transition-transform duration-300 hover:scale-105">
+                <div class="w-24 h-24 rounded-full overflow-hidden mb-4 border-2 border-brand-purple">
+                    <img src="Meesho.png" alt="Meesho Logo" class="w-full h-full object-cover">
+                </div>
+                <div class="text-center mb-4">
+                    <h3 class="text-xl font-bold text-white mb-2">Meesho</h3>
+                    <p class="text-sm text-gray-400">Eligibility: Bachelor's or Master's student in Computer Science.
+                    </p>
+                </div>
+                <div class="match-liquid-display">
+                    <div class="match-liquid-percentage">80%</div>
+                    <div class="match-liquid-label">Overall Match</div>
+                    <div class="match-liquid-fill bg-match-yellow" style="height: 80%;"></div>
+                </div>
+                <a href="#"
+                    class="mt-auto inline-block bg-brand-purple text-white px-6 py-2 rounded-full font-semibold text-sm transition-colors duration-200 hover:bg-brand-purple/80">
+                    See More
+                </a>
+            </div>
+
+            <div
+                class="flex flex-col items-center justify-between p-6 bg-card-bg rounded-xl shadow-2xl backdrop-blur-sm card-border-glow transition-transform duration-300 hover:scale-105">
+                <div class="w-24 h-24 rounded-full overflow-hidden mb-4 border-2 border-brand-blue">
+                    <img src="zepto.jpg" alt="Zepto Logo" class="w-full h-full object-cover">
+                </div>
+                <div class="text-center mb-4">
+                    <h3 class="text-xl font-bold text-white mb-2">Zepto</h3>
+                    <p class="text-sm text-gray-400">Eligibility: Engineering students in their final year.</p>
+                </div>
+                <div class="match-liquid-display">
+                    <div class="match-liquid-percentage">95%</div>
+                    <div class="match-liquid-fill bg-match-green" style="height: 95%;"></div>
+                </div>
+                <a href="#"
+                    class="mt-auto inline-block bg-brand-blue text-white px-6 py-2 rounded-full font-semibold text-sm transition-colors duration-200 hover:bg-brand-blue/80">
+                    See More
+                </a>
+            </div>
+
+            <div
+                class="flex flex-col items-center justify-between p-6 bg-card-bg rounded-xl shadow-2xl backdrop-blur-sm card-border-glow transition-transform duration-300 hover:scale-105">
+                <div class="w-24 h-24 rounded-full overflow-hidden mb-4 border-2 border-brand-green">
+                    <img src="jambotail.png" alt="Jumbotail Logo" class="w-full h-full object-cover">
+                </div>
+                <div class="text-center mb-4">
+                    <h3 class="text-xl font-bold text-white mb-2">Jumbotail</h3>
+                    <p class="text-sm text-gray-400">Eligibility: Any graduate with good analytical skills.</p>
+                </div>
+                <div class="match-liquid-display">
+                    <div class="match-liquid-percentage">70%</div>
+                    <div class="match-liquid-fill bg-match-yellow" style="height: 70%;"></div>
+                </div>
+                <a href="#"
+                    class="mt-auto inline-block bg-brand-green text-white px-6 py-2 rounded-full font-semibold text-sm transition-colors duration-200 hover:bg-brand-green/80">
+                    See More
+                </a>
+            </div>
+
+            <div
+                class="flex flex-col items-center justify-between p-6 bg-card-bg rounded-xl shadow-2xl backdrop-blur-sm card-border-glow transition-transform duration-300 hover:scale-105">
+                <div class="w-24 h-24 rounded-full overflow-hidden mb-4 border-2 border-brand-pink">
+                    <img src="tcs.jpg" alt="TCS Logo" class="w-full h-full object-cover">
+                </div>
+                <div class="text-center mb-4">
+                    <h3 class="text-xl font-bold text-white mb-2">TCS</h3>
+                    <p class="text-sm text-gray-400">Eligibility: B.Tech/M.Tech students from premier institutes.</p>
+                </div>
+                <div class="match-liquid-display">
+                    <div class="match-liquid-percentage">85%</div>
+                    <div class="match-liquid-fill bg-match-green" style="height: 85%;"></div>
+                </div>
+                <a href="#"
+                    class="mt-auto inline-block bg-brand-pink text-white px-6 py-2 rounded-full font-semibold text-sm transition-colors duration-200 hover:bg-brand-pink/80">
+                    See More
+                </a>
+            </div>
+
+            <div
+                class="flex flex-col items-center justify-between p-6 bg-card-bg rounded-xl shadow-2xl backdrop-blur-sm card-border-glow transition-transform duration-300 hover:scale-105">
+                <div class="w-24 h-24 rounded-full overflow-hidden mb-4 border-2 border-brand-green">
+                    <img src="seekho.png" alt="Seekho Logo" class="w-full h-full object-cover">
+                </div>
+                <div class="text-center mb-4">
+                    <h3 class="text-xl font-bold text-white mb-2">Seekho</h3>
+                    <p class="text-sm text-gray-400">Eligibility: Students pursuing BCA or MCA.</p>
+                </div>
+                <div class="match-liquid-display">
+                    <div class="match-liquid-percentage">65%</div>
+                    <div class="match-liquid-fill bg-match-yellow" style="height: 65%;"></div>
+                </div>
+                <a href="#"
+                    class="mt-auto inline-block bg-brand-green text-white px-6 py-2 rounded-full font-semibold text-sm transition-colors duration-200 hover:bg-brand-green/80">
+                    See More
+                </a>
+            </div>
+
+            <div
+                class="flex flex-col items-center justify-between p-6 bg-card-bg rounded-xl shadow-2xl backdrop-blur-sm card-border-glow transition-transform duration-300 hover:scale-105">
+                <div class="w-24 h-24 rounded-full overflow-hidden mb-4 border-2 border-brand-purple">
+                    <img src="delhivery.jpg" alt="Delhivery Logo" class="w-full h-full object-cover">
+                </div>
+                <div class="text-center mb-4">
+                    <h3 class="text-xl font-bold text-white mb-2">Delhivery</h3>
+                    <p class="text-sm text-gray-400">Eligibility: All students with an interest in technology.</p>
+                </div>
+                <div class="match-liquid-display">
+                    <div class="match-liquid-percentage">90%</div>
+                    <div class="match-liquid-fill bg-match-green" style="height: 90%;"></div>
+                </div>
+                <a href="#"
+                    class="mt-auto inline-block bg-brand-purple text-white px-6 py-2 rounded-full font-semibold text-sm transition-colors duration-200 hover:bg-brand-purple/80">
+                    See More
+                </a>
+            </div>
+
+            <div
+                class="flex flex-col items-center justify-between p-6 bg-card-bg rounded-xl shadow-2xl backdrop-blur-sm card-border-glow transition-transform duration-300 hover:scale-105">
+                <div class="w-24 h-24 rounded-full overflow-hidden mb-4 border-2 border-brand-blue">
+                    <img src="classplus.png" alt="Classplus Logo" class="w-full h-full object-cover">
+                </div>
+                <div class="text-center mb-4">
+                    <h3 class="text-xl font-bold text-white mb-2">Classplus</h3>
+                    <p class="text-sm text-gray-400">Eligibility: Currently enrolled students with good coding skills.
+                    </p>
+                </div>
+                <div class="match-liquid-display">
+                    <div class="match-liquid-percentage">80%</div>
+                    <div class="match-liquid-fill bg-match-yellow" style="height: 80%;"></div>
+                </div>
+                <a href="#"
+                    class="mt-auto inline-block bg-brand-blue text-white px-6 py-2 rounded-full font-semibold text-sm transition-colors duration-200 hover:bg-brand-blue/80">
+                    See More
+                </a>
+            </div>
+
+            <div
+                class="flex flex-col items-center justify-between p-6 bg-card-bg rounded-xl shadow-2xl backdrop-blur-sm card-border-glow transition-transform duration-300 hover:scale-105">
+                <div class="w-24 h-24 rounded-full overflow-hidden mb-4 border-2 border-brand-purple">
+                    <img src="razorpay.webp" alt="Razorpay Logo" class="w-full h-full object-cover">
+                </div>
+                <div class="text-center mb-4">
+                    <h3 class="text-xl font-bold text-white mb-2">Razorpay</h3>
+                    <p class="text-sm text-gray-400">Eligibility: Graduate and postgraduate students in tech.</p>
+                </div>
+                <div class="match-liquid-display">
+                    <div class="match-liquid-percentage">60%</div>
+                    <div class="match-liquid-fill bg-match-yellow" style="height: 60%;"></div>
+                </div>
+                <a href="#"
+                    class="mt-auto inline-block bg-brand-purple text-white px-6 py-2 rounded-full font-semibold text-sm transition-colors duration-200 hover:bg-brand-purple/80">
+                    See More
+                </a>
+            </div>
+
+            <div
+                class="flex flex-col items-center justify-between p-6 bg-card-bg rounded-xl shadow-2xl backdrop-blur-sm card-border-glow transition-transform duration-300 hover:scale-105">
+                <div class="w-24 h-24 rounded-full overflow-hidden mb-4 border-2 border-brand-pink">
+                    <img src="lenskart.webp" alt="Lenskart Logo" class="w-full h-full object-cover">
+                </div>
+                <div class="text-center mb-4">
+                    <h3 class="text-xl font-bold text-white mb-2">Lenskart</h3>
+                    <p class="text-sm text-gray-400">Eligibility: All students with a passion for software.</p>
+                </div>
+                <div class="match-liquid-display">
+                    <div class="match-liquid-percentage">55%</div>
+                    <div class="match-liquid-fill bg-match-yellow" style="height: 55%;"></div>
+                </div>
+                <a href="#"
+                    class="mt-auto inline-block bg-brand-pink text-white px-6 py-2 rounded-full font-semibold text-sm transition-colors duration-200 hover:bg-brand-pink/80">
+                    See More
+                </a>
+            </div>
+
+            <div
+                class="flex flex-col items-center justify-between p-6 bg-card-bg rounded-xl shadow-2xl backdrop-blur-sm card-border-glow transition-transform duration-300 hover:scale-105">
+                <div class="w-24 h-24 rounded-full overflow-hidden mb-4 border-2 border-brand-green">
+                    <img src="swiggy.png" alt="Swiggy Logo" class="w-full h-full object-cover">
+                </div>
+                <div class="text-center mb-4">
+                    <h3 class="text-xl font-bold text-white mb-2">Swiggy</h3>
+                    <p class="text-sm text-gray-400">Eligibility: Students with a keen interest in food and technology.
+                    </p>
+                </div>
+                <div class="match-liquid-display">
+                    <div class="match-liquid-percentage">92%</div>
+                    <div class="match-liquid-fill bg-match-green" style="height: 92%;"></div>
+                </div>
+                <a href="#"
+                    class="mt-auto inline-block bg-brand-green text-white px-6 py-2 rounded-full font-semibold text-sm transition-colors duration-200 hover:bg-brand-green/80">
+                    See More
+                </a>
+            </div>
+
+            <div
+                class="flex flex-col items-center justify-between p-6 bg-card-bg rounded-xl shadow-2xl backdrop-blur-sm card-border-glow transition-transform duration-300 hover:scale-105">
+                <div class="w-24 h-24 rounded-full overflow-hidden mb-4 border-2 border-brand-pink">
+                    <img src="zomato.avif" alt="Zomato Logo" class="w-full h-full object-cover">
+                </div>
+                <div class="text-center mb-4">
+                    <h3 class="text-xl font-bold text-white mb-2">Zomato</h3>
+                    <p class="text-sm text-gray-400">Eligibility: Students passionate about product management.</p>
+                </div>
+                <div class="match-liquid-display">
+                    <div class="match-liquid-percentage">88%</div>
+                    <div class="match-liquid-fill bg-match-green" style="height: 88%;"></div>
+                </div>
+                <a href="#"
+                    class="mt-auto inline-block bg-brand-pink text-white px-6 py-2 rounded-full font-semibold text-sm transition-colors duration-200 hover:bg-brand-pink/80">
+                    See More
+                </a>
+            </div>
+
+            <div
+                class="flex flex-col items-center justify-between p-6 bg-card-bg rounded-xl shadow-2xl backdrop-blur-sm card-border-glow transition-transform duration-300 hover:scale-105">
+                <div class="w-24 h-24 rounded-full overflow-hidden mb-4 border-2 border-brand-blue">
+                    <img src="uber.jpg" alt="Uber Logo" class="w-full h-full object-cover">
+                </div>
+                <div class="text-center mb-4">
+                    <h3 class="text-xl font-bold text-white mb-2">Uber</h3>
+                    <p class="text-sm text-gray-400">Eligibility: Engineering students from top universities.</p>
+                </div>
+                <div class="match-liquid-display">
+                    <div class="match-liquid-percentage">91%</div>
+                    <div class="match-liquid-fill bg-match-green" style="height: 91%;"></div>
+                </div>
+                <a href="#"
+                    class="mt-auto inline-block bg-brand-blue text-white px-6 py-2 rounded-full font-semibold text-sm transition-colors duration-200 hover:bg-brand-blue/80">
+                    See More
+                </a>
+            </div>
+
+        </div>
+
+        <div class="flex justify-center mt-12 space-x-2">
+            <button
+                class="bg-brand-purple text-white font-semibold px-4 py-2 rounded-md transition-colors duration-200">1</button>
+            <button
+                class="bg-gray-800 text-gray-400 font-semibold px-4 py-2 rounded-md hover:bg-gray-700 transition-colors duration-200">2</button>
+            <button
+                class="bg-gray-800 text-gray-400 font-semibold px-4 py-2 rounded-md hover:bg-gray-700 transition-colors duration-200">3</button>
+        </div>
+    </main>
+
+    <!-- Footer section -->
+    <footer class="bg-card-bg text-gray-400 py-6 mt-12 backdrop-blur-sm">
+        <div class="container mx-auto px-4 text-center">
+            <p>&copy; 2024 InterNova. All rights reserved.</p>
+            <p class="text-sm mt-2">A demo for an AI-Based Internship Recommendation Engine.</p>
+        </div>
+    </footer>
+
+    <!-- JavaScript file ko body ke end mein link kiya -->
+    <script src="script.js" defer></script>
+</body>
+
+</html>

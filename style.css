@@ -1,0 +1,264 @@
+/*
+ * Custom CSS for the Internship Portal.
+ * This file defines custom colors and styles not available in the default Tailwind CDN.
+ */
+
+/* Custom Colors */
+.bg-green {
+    background-color: #138808;
+}
+
+.text-green {
+    color: #138808;
+}
+
+.bg-saffron {
+    background-color: #ff9933;
+}
+
+.text-saffron {
+    color: #ff9933;
+}
+
+.bg-dark-blue {
+    background-color: #000080;
+}
+
+.text-dark-blue {
+    color: #000080;
+}
+
+/* Custom Component Styles */
+.company-flashcard {
+    padding: 1.5rem;
+    background-color: #fff;
+    border-radius: 0.75rem; /* rounded-xl */
+    box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06); /* shadow-md */
+    transition: transform 0.2s, box-shadow 0.2s;
+}
+
+.company-flashcard:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1), 0 4px 6px -2px rgba(0, 0, 0, 0.05); /* shadow-lg */
+}
+
+/* Modal Styling */
+.modal {
+    display: none;
+    position: fixed;
+    z-index: 1000;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    overflow: auto;
+    background-color: rgba(0, 0, 0, 0.4);
+    align-items: center;
+    justify-content: center;
+}
+
+.modal-content {
+    background-color: #fefefe;
+    margin: auto;
+    padding: 20px;
+    border: 1px solid #888;
+    width: 80%;
+    max-width: 500px;
+    border-radius: 0.5rem;
+    box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06);
+}
+
+/* Hide scrollbar for the horizontal navigation */
+.scrollbar-hide {
+    -ms-overflow-style: none;  /* IE and Edge */
+    scrollbar-width: none;  /* Firefox */
+}
+.scrollbar-hide::-webkit-scrollbar {
+    display: none;  /* Chrome, Safari, and Opera */
+}
+/* Google Fonts ko import kiya, taaki fonts mil jayein */
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&family=JetBrains+Mono:wght@400;700&display=swap');
+
+/* Button pe glow wala effect */
+.glow-button {
+    box-shadow: 0 0 5px #EC4899, 0 0 10px #EC4899;
+    transition: box-shadow 0.3s ease-in-out;
+}
+
+/* Hover karne pe glow aur badh jayega */
+.glow-button:hover {
+    box-shadow: 0 0 10px #EC4899, 0 0 20px #EC4899, 0 0 30px #EC4899;
+}
+
+/* Card ke border pe glow wala mast effect */
+.card-border-glow {
+    position: relative;
+    z-index: 1;
+}
+
+.card-border-glow::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    border-radius: 12px;
+    padding: 2px;
+    /* Border pe rang birangi gradient */
+    background: linear-gradient(45deg, #EC4899, #8B5CF6, #3B82F6, #22C55E);
+    /* Yeh magic code hai jisse sirf border pe hi gradient dikhega */
+    -webkit-mask: linear-gradient(#fff 0 0) content-box, linear-gradient(#fff 0 0);
+    -webkit-mask-composite: xor;
+    mask-composite: exclude;
+    z-index: -1;
+    transition: transform 0.3s ease-in-out;
+    transform: scale(0.98);
+}
+
+.card-border-glow:hover::before {
+    transform: scale(1);
+}
+
+/* Liquid style match percentage display ka container */
+.match-liquid-display {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    width: 120px;
+    height: 160px;
+    margin: 0 auto;
+    border-radius: 12px;
+    overflow: hidden;
+    position: relative;
+    background-color: rgba(255, 255, 255, 0.08);
+    margin-bottom: 1.5rem;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.3);
+}
+
+/* Andar ka liquid fill, jo match percentage ke hisaab se upar jayega */
+.match-liquid-fill {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    transition: height 1s ease-out;
+    border-top-left-radius: 50% 20%;
+    border-top-right-radius: 50% 20%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+}
+
+/* Percentage number ki styling */
+.match-liquid-percentage {
+    font-size: 2.25rem;
+    font-weight: 800;
+    color: #ffffff;
+    z-index: 2;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    text-shadow: 0 0 8px rgba(0, 0, 0, 0.5);
+}
+
+/* "Overall Match" label ki styling */
+.match-liquid-label {
+    position: absolute;
+    bottom: 10px;
+    font-size: 0.875rem;
+    font-weight: 600;
+    color: rgba(255, 255, 255, 0.8);
+    z-index: 2;
+    text-shadow: 0 0 5px rgba(0, 0, 0, 0.4);
+}
+
+/* Hamburger menu ka icon */
+.hamburger-menu-icon {
+    cursor: pointer;
+    z-index: 50;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    height: 24px;
+    width: 32px;
+    background: transparent;
+    border: none;
+    padding: 0;
+    position: relative;
+}
+
+/* Base styles for the lines */
+.line {
+    display: block;
+    width: 100%;
+    height: 3px;
+    background: white;
+    border-radius: 10px;
+    transition: all 0.3s ease-in-out;
+}
+
+/* Hamburger ko cross banane ka jaadu */
+.hamburger-menu-icon.open .line-1 {
+    transform: translateY(8px) rotate(45deg);
+    opacity: 0;
+}
+
+.hamburger-menu-icon.open .line-2 {
+    opacity: 0;
+}
+
+.hamburger-menu-icon.open .line-3 {
+    transform: translateY(-8px) rotate(-45deg);
+    opacity: 0;
+}
+
+.hamburger-menu-icon.open .cross {
+    opacity: 1;
+}
+
+.cross .line-4,
+.cross .line-5 {
+    position: absolute;
+    width: 100%;
+    height: 3px;
+    background: white;
+    border-radius: 10px;
+}
+
+.cross .line-4 {
+    transform: rotate(45deg);
+}
+
+.cross .line-5 {
+    transform: rotate(-45deg);
+}
+
+.hamburger-menu-icon.open .line-4,
+.hamburger-menu-icon.open .line-5 {
+    transform: none;
+    transform: rotate(45deg);
+}
+
+/* Right side se slide hone wala menu */
+.slide-in-menu {
+    position: fixed;
+    top: 0;
+    right: 0;
+    height: 100%;
+    width: 300px;
+    background-color: #1a1a1a;
+    transform: translateX(100%);
+    transition: transform 0.4s ease-in-out;
+    z-index: 40;
+    box-shadow: -5px 0 15px rgba(0, 0, 0, 0.5);
+    padding-top: 80px;
+}
+
+/* Jab 'open' class lagti hai, tab menu andar aa jayega */
+.slide-in-menu.open {
+    transform: translateX(0);
+}
